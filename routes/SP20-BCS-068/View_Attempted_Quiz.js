@@ -21,6 +21,4 @@ router.post("/view-attempted-quiz", function (req, res) {
 });
 //git commit -m "Completed"
 
-
-
 module.exports = router;
