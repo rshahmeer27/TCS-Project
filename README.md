@@ -8,11 +8,6 @@ fork the repo from here
 git clone https://github.com/yourusername/TCS-Project.git
 
 
-*to add the link of main repo in your local device*
-
-git remote add tcs https://github.com/rshahmeer27/TCS-Project.git
-
-
 *to pull the git repo*
 
 git pull
@@ -25,14 +20,9 @@ git add -A
 git commit -m "add message here"
 
 
-*to push the repo in your forked repo*
-
-git checkout -b branch-name-here 
-
-
 *to push the branch in your forked repo*
 
-git push -u origin branch-name-here
+git push -u origin merge
 
 
 After pushing the code in the forked repository. Create a pull request from your GitHub account from here
@@ -62,3 +52,8 @@ git remote -v
 *to check the number of branches in your system and see which branch you are on*
 
 git branch
+
+
+*to push the repo in your forked repo*
+
+git checkout -b branch-name-here 
