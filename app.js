@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
 var studentRouter = require('./routes/student');
 var teacherRouter = require('./routes/teacher');
+var assignmentRouter = require('./routes/assignments');
 var headRouter = require('./routes/head');
 var graphRouter = require('./routes/Sp20-bcs-093/graphs');
 const connection = mongoose.connect('mongodb://localhost:27017/lms', {
@@ -16,6 +17,9 @@ const connection = mongoose.connect('mongodb://localhost:27017/lms', {
 	useUnifiedTopology: true,
 });
 var app = express();
+
+
+
 connection.then(
 	db => {
 		console.log('Connected correctly to server');
@@ -24,6 +28,11 @@ connection.then(
 		console.log(err);
 	}
 );
+
+
+
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -39,9 +48,11 @@ app.use('/', indexRouter);
 app.use('/user', usersRouter);
 app.use('/head', headRouter);
 app.use('/teacher', teacherRouter);
+app.use('/result/class/:id', teacherRouter);
 app.use('/admin', adminRouter);
 app.use('/student', studentRouter);
 app.use('/graphs', graphRouter);
+app.use('/assignment', assignmentRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
