@@ -12,6 +12,7 @@ var teacherRouter = require('./routes/teacher');
 var assignmentRouter = require('./routes/assignments');
 var headRouter = require('./routes/head');
 var graphRouter = require('./routes/Sp20-bcs-093/graphs');
+var viewGradesRouter = require('./routes/Sp20-bcs-061/ViewGrades');
 const connection = mongoose.connect('mongodb://localhost:27017/lms', {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
@@ -53,6 +54,7 @@ app.use('/admin', adminRouter);
 app.use('/student', studentRouter);
 app.use('/graphs', graphRouter);
 app.use('/assignment', assignmentRouter);
+app.use('/grades/:studentId', viewGradesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
