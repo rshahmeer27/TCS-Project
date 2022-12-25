@@ -7,7 +7,12 @@ exports.attemptedAssignments = async(req,res,next)=>{
 
 try{
     let data = await Assignment.find({
-        "submittedBy" : req.params['student']
+
+        'response': {
+            $elemMatch: {
+                "submittedBy": req.params['student']
+            }
+        }
 
     })
 
