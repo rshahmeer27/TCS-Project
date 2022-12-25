@@ -22,7 +22,7 @@ git commit -m "add message here"
 
 *to push the branch in your forked repo*
 
-git push -u origin merge
+git push -u origin main
 
 
 After pushing the code in the forked repository. Create a pull request from your GitHub account from here
