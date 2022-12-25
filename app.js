@@ -38,6 +38,7 @@ app.use('/', indexRouter);
 app.use('/user', usersRouter);
 app.use('/head', headRouter);
 app.use('/teacher', teacherRouter);
+app.use('/result/class/:id', teacherRouter);
 app.use('/admin', adminRouter);
 app.use('/student', studentRouter);
 
