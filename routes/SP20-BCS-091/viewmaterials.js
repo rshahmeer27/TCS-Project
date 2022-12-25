@@ -3,7 +3,7 @@ var router = express.Router();
 var Materials = require('../../models/material')
 
 router.get('/', function (req, res, next) {
-	res.send('respond with a resource');
+	res.send('hello i am saman ashraf');
 });
 router.get('/viewmaterials', function(req, res, next) {
     Materials.find({}).populate('teacher.id').sort('UploadedOn').exec(function(err,data){
