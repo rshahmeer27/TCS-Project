@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var Materials = require('../../models/material')
 
 
 app.get('/download', (req, res) => {
