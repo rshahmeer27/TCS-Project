@@ -8,6 +8,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var adminRouter = require("./routes/admin");
 var studentRouter = require("./routes/student");
+var MaterialRouter = require("./routes/Sp20-bcs-083/ViewMaterials");
 var teacherRouter = require("./routes/teacher");
 var assignmentRouter = require("./routes/assignments");
 var deleteAssignment = require("./routes/SP20-BCS-076/deleteAssignment");
@@ -40,6 +41,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/user", usersRouter);
+app.use("/viewmaterials", MaterialRouter);
 app.use("/head", headRouter);
 app.use("/teacher", teacherRouter);
 app.use("/result/class/:id", teacherRouter);
