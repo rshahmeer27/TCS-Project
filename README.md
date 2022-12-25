@@ -8,11 +8,6 @@ fork the repo from here
 git clone https://github.com/yourusername/TCS-Project.git
 
 
-*to add the link of main repo in your local device*
-
-git remote add tcs https://github.com/rshahmeer27/TCS-Project.git
-
-
 *to pull the git repo*
 
 git pull
