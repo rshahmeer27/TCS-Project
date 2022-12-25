@@ -13,7 +13,7 @@ var assignmentRouter = require("./routes/assignments");
 var deleteAssignment = require("./routes/SP20-BCS-076/deleteAssignment");
 var headRouter = require("./routes/head");
 var graphRouter = require("./routes/Sp20-bcs-093/graphs");
-const connection = mongoose.connect("mongodb://localhost:27017/lms", {
+const connection = mongoose.connect("mongodb://0.0.0.0:27017/lms", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
