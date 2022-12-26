@@ -14,8 +14,6 @@ var assignmentRouter = require("./routes/assignments");
 var deleteAssignment = require("./routes/SP20-BCS-076/deleteAssignment");
 var headRouter = require("./routes/head");
 var graphRouter = require("./routes/Sp20-bcs-093/graphs");
-var ClassesRouter = require("./routes/SP20-BCS-113/viewClasses.js","./routes/teacher","./routes/student");
-
 const connection = mongoose.connect("mongodb://localhost:27017/lms", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -51,7 +49,6 @@ app.use("/admin", adminRouter);
 app.use("/student", studentRouter);
 app.use("/graphs", graphRouter);
 app.use("/assignment", assignmentRouter);
-app.use("/viewClasses",ClassesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
