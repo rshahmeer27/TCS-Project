@@ -12,6 +12,7 @@ var MaterialRouter = require("./routes/Sp20-bcs-083/ViewMaterials");
 var teacherRouter = require("./routes/teacher");
 var assignmentRouter = require("./routes/assignments");
 var deleteAssignment = require("./routes/SP20-BCS-076/deleteAssignment");
+var TeacherDashboard = require("./routes/SP20-BCS-066")
 var headRouter = require("./routes/head");
 var graphRouter = require("./routes/Sp20-bcs-093/graphs");
 var ClassesRouter = require("./routes/SP20-BCS-113/viewClasses.js","./routes/teacher","./routes/student");
@@ -51,6 +52,7 @@ app.use("/admin", adminRouter);
 app.use("/student", studentRouter);
 app.use("/graphs", graphRouter);
 app.use("/assignment", assignmentRouter);
+app.use("/teacherdashboard", TeacherDashboard);
 app.use("/viewClasses",ClassesRouter);
 
 // catch 404 and forward to error handler
