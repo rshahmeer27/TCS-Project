@@ -2,6 +2,10 @@ var mongoose = require("mongoose");
 var schema = mongoose.Schema;
 
 var resultSchema = new schema({
+    classId : {
+        type : String,
+        required : true,
+    },
     courseId : {
         type : String,
         required : true,
