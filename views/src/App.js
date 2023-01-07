@@ -9,7 +9,7 @@ import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 
 import { Route, Routes, Link } from "react-router-dom";
-import { AttemptedAssignment } from "./SP20-BCS-071/AttemptedAssignment";
+import { AttemptedAssignment } from "./pages/SP20-BCS-071/AttemptedAssignment";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
