@@ -9,29 +9,30 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
-import axios from 'axios';
+import axios from "axios";
 export const AttemptedAssignment = () => {
   function createData(title, dueDate, createdAt) {
     return { title, dueDate, createdAt };
   }
 
-  const [rows,setrows] = useState([])
+  const [rows, setrows] = useState([]);
 
-useEffect(()=>{
-(async()=>{
-let data = await axios.get('http://localhost:5000/assignment/63a828659646fc3dfc859a6f')
-data = data.data
-let rw = []
-data.map((x)=>{
-  rw.push(
-    createData(x.title,new Date(x.dueDate),new Date(x.createdAt))
-  )
-})
-setrows(rw)
-console.log(data)
-})()
-},[])
-console.log(rows)
+  useEffect(() => {
+    (async () => {
+      let data = await axios.get(
+        `${process.env.REACT_APP_API_URL}assignment/63a828659646fc3dfc859a6f`
+      );
+      data = data.data;
+      let rw = [];
+      data.map((x) => {
+        rw.push(
+          createData(x.title, new Date(x.dueDate), new Date(x.createdAt))
+        );
+      });
+      setrows(rw);
+    })();
+  }, []);
+
   return (
     <Container maxWidth="lg">
       <Box sx={{ flexGrow: 1 }}>
