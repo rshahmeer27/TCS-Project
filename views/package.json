@@ -12,9 +12,13 @@
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
     "@mui/material": "latest",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.1",
     "react": "latest",
     "react-dom": "latest",
-    "react-scripts": "latest"
+    "react-router-dom": "^6.6.1",
+    "react-scripts": "latest",
+    "sort-by": "^1.2.0"
   },
   "browserslist": {
     "production": [
