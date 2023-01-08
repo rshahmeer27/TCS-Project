@@ -1,20 +1,19 @@
 var express = require('express');
+const Student = require('../models/student');
 var router = express.Router();
 
-/* GET Operations */
 router.get('/', function(req, res, next) {
     res.send('respond with a resource');
 
 });
-router.delete('/:id', (req, res) => {
-    const id = req.params.id;
-  
-    Student.findByIdAndRemove(id, (err, student) => {
-      if (err) {
-        return res.status(500).json({ message: err.message });
-      }
-      res.json({ message: 'Student deleted' });
-    });
-  });
+router.delete('/delstudent/:id', function (req, res, next) {
+	Student.deleteOne({ _id: req.params.id }, function (error, results) {
+		if (error) {
+			return next(error);
+		}
+		// Respond with valid data
+		res.json(results);
+	});
+});
   
   module.exports = router;
