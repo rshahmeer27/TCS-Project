@@ -16,7 +16,7 @@ var TeacherDashboard = require("./routes/SP20-BCS-066")
 var headRouter = require("./routes/head");
 var graphRouter = require("./routes/Sp20-bcs-093/graphs");
 var ClassesRouter = require("./routes/SP20-BCS-113/viewClasses.js","./routes/teacher","./routes/student");
-
+var addstudenttoclass = require ("./routes/SP19-BCS-107/ASTC.js")
 const connection = mongoose.connect("mongodb://localhost:27017/lms", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
