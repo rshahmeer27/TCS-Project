@@ -10,7 +10,7 @@ router.get('/viewQuiz/:qid', function (req, res, next) {
 		if (error) {
 			return next(error);
 		}
-		res.json(results);
+		res.json({ results });
 	});
 });
 
