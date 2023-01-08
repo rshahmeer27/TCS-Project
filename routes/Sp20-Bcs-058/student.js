@@ -4,7 +4,6 @@ var Materials = require('../../models/material')
 
 
 app.get('/download', (req, res) => {
-    
     const file = `${__dirname}/path/to/file.zip`;
     res.download(file);
   });
