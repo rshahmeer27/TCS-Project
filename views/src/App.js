@@ -10,7 +10,7 @@ import { styled } from '@mui/material/styles';
 
 import { Route, Routes, Link, useNavigate } from 'react-router-dom';
 import { AttemptedAssignment } from './pages/SP20-BCS-071/AttemptedAssignment';
-
+import StudentDashboard from './pages/SP20-BCS-055/ViewStudentDashboard'
 const Item = styled(Paper)(({ theme }) => ({
 	backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
 	...theme.typography.body2,
@@ -33,32 +33,37 @@ const Appbar = () => {
 
 export default function App() {
 	return (
-		<>
-			<Appbar />
-			<Routes>
-				<Route path='/' element={<Home />} />
-				<Route path='/SP20-BCS-071' element={<AttemptedAssignment />} />
-			</Routes>
-		</>
-	);
+    <>
+      <Appbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/SP20-BCS-055" element={<StudentDashboard />} />
+        <Route path="/SP20-BCS-071" element={<AttemptedAssignment />} />
+        
+      </Routes>
+    </>
+  );
 }
 
 const Home = () => {
 	return (
-		<>
-			<Container maxWidth='sm'>
-				<Box sx={{ my: 4 }}>
-					<Stack spacing={2}>
-						<Link to='/SP20-BCS-071'>
-							<Item>Muhammad Touseef (SP20-BCS-071) </Item>
-						</Link>
-						<Item>Item 2</Item>
-						<Item>Item 3</Item>
-					</Stack>
-				</Box>
-			</Container>
-		</>
-	);
+    <>
+      <Container maxWidth="sm">
+        <Box sx={{ my: 4 }}>
+          <Stack spacing={2}>
+            <Link to="/SP20-BCS-055">
+              <Item>Muhammad Ahmad Siddique (SP20-BCS-055) </Item>
+            </Link>
+            <Link to="/SP20-BCS-071">
+              <Item>Muhammad Touseef (SP20-BCS-071) </Item>
+            </Link>
+            <Item>Item 2</Item>
+            <Item>Item 3</Item>
+          </Stack>
+        </Box>
+      </Container>
+    </>
+  );
 };
 
 const AttemptQuiz = ({ sid, qid, courseCode }) => {
