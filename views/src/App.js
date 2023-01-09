@@ -10,6 +10,10 @@ import { styled } from '@mui/material/styles';
 
 import { Route, Routes, Link, useNavigate } from 'react-router-dom';
 import { AttemptedAssignment } from './pages/SP20-BCS-071/AttemptedAssignment';
+import { DeleteQuiz } from './pages/SP20-BCS-070 & SP20-BCS-095/DeleteQuiz';
+import { DeleteAssignment } from './pages/SP20-BCS-076/DeleteAssignment';
+
+
 
 const Item = styled(Paper)(({ theme }) => ({
 	backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -38,6 +42,8 @@ export default function App() {
 			<Routes>
 				<Route path='/' element={<Home />} />
 				<Route path='/SP20-BCS-071' element={<AttemptedAssignment />} />
+				<Route path='/SP20-BCS-070 & SP20-BCS-095' element={<DeleteQuiz />} />
+				<Route path='/SP20-BCS-076' element={<DeleteAssignment/>} />
 			</Routes>
 		</>
 	);
@@ -52,8 +58,9 @@ const Home = () => {
 						<Link to='/SP20-BCS-071'>
 							<Item>Muhammad Touseef (SP20-BCS-071) </Item>
 						</Link>
-						<Item>Item 2</Item>
-						<Item>Item 3</Item>
+						<Link to='/SP20-BCS-070 & SP20-BCS-095'><Item>M. Tayyab & Arshik Javed (SP20-BCS-070 & SP20-BCS-095) </Item></Link>
+						<Link to='/SP20-BCS-076'><Item>Mujtaba Aziz Khan (SP20-BCS-076) </Item></Link>
+						<Item>Item 4</Item>
 					</Stack>
 				</Box>
 			</Container>
