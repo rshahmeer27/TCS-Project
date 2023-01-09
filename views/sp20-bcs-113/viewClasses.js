@@ -1,25 +1,34 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Classes from viewClasses;
+import Classes from 'viewClasses';
 var Classes = require('../../models/class')
 
+const express = require('express');
+const app = express();
 
-import "./styles.css";
-
-function App() {
-  const itemList = ["Item1", "Item2", "Item3", "Item4", "Item5"];
-
-  // Generate JSX code for Display each item
-  const renderList = itemList.map((item, index) => 
-                               <div key={index}>{item}</div>
-                             );
-  return (
-    <div className="app">
-      <div>The List contains:</div>
-      {renderList}
-    </div>
-  );
+class StudentView {
+  constructor(student) {
+    this.id = student.code;
+    this.name = student.name;
+    this.email = student.marks;
+    this.gpa = student.quiz;
+  }
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+class StudentListView {
+  constructor(students) {
+    this.students = students.map(student => new StudentView(student));
+  }
+}
+
+app.get('/students', (req, res) => {
+  const students = getAllStudents(); 
+  const view = new StudentListView(students);
+  res.send(view);
+});
+
+app.get('/students/:id', (req, res) => {
+  const student = getStudentById(req.params.id); 
+  const view = new StudentView(student);
+  res.send(view);
+});
