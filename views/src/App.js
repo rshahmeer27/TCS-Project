@@ -112,7 +112,7 @@ const AttemptQuiz = ({ sid, qid, courseCode }) => {
 			}
 
 			const response = await fetch(
-				`http://localhost:4000/students/validate-quiz/${score}/${sid}/${qid}/${courseCode}`,
+				`http://localhost:4000/students/attemptQuiz`,
 				{
 					method: 'PATCH',
 					body: JSON.stringify({
