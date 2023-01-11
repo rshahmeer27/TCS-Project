@@ -7,17 +7,35 @@ router.get('/', function (req, res, next) {
 });
 
 // Attempt Quiz
-router.post('/attempt-quiz', function (req, res) {
-	let numCorrect = 0;
-	for (let i = 0; i < req.body.length; i++) {
-		if (req.body[i].submittedAnswer === req.body[i].correctAnswer) {
-			numCorrect++;
-		}
+router.patch('/attemptQuiz', async (req, res, next) => {
+	try {
+		const sid = req.body.sid;
+		const qid = req.body.qid;
+		const score = req.body.score;
+		const code = req.body.code;
+		const result = await Student.updateOne(
+			{ _id: sid, 'courses.code': code },
+			{
+				$set: {
+					'courses.$[course].quiz.$[quiz].attempted': true,
+					'courses.$[course].quiz.$[quiz].marks': score,
+				},
+			},
+			{
+				arrayFilters: [
+					{
+						'course.code': code,
+					},
+					{
+						'quiz._id': qid,
+					},
+				],
+			}
+		);
+		res.status(200).json({ message: 'Successfully Entered Marks', result });
+	} catch (err) {
+		res.status(500).json({});
 	}
-	res.send({
-		numCorrect: numCorrect,
-		numQuestions: req.body.length,
-	});
 });
 
 module.exports = router;
